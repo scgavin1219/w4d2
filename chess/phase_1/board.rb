@@ -1,4 +1,5 @@
-require_relative "piece"
+#require_relative "piece"
+require_relative 'chess'
 
 class Board
     def initialize

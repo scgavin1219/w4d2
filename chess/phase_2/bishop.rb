@@ -5,11 +5,11 @@ class Bishop < Piece
 
   def initialize(color, board, pos)
       super
-      @symbol = :bishop
+      @symbol = :B
 
   end
 
-  include Slideable
+
 
   private
 

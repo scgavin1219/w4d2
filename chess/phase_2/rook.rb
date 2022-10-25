@@ -6,11 +6,11 @@ class Rook < Piece
 
     def initialize(color, board, pos)
         super
-        @symbol = :rook
+        @symbol = :R
 
     end
 
-    include Slideable
+
 
     private
 

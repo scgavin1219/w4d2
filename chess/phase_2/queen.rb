@@ -5,11 +5,11 @@ class Queen < Piece
 
   def initialize(color, board, pos)
       super
-      @symbol = :queen
+      @symbol = :Q
 
   end
 
-  include Slideable
+
 
   private
 

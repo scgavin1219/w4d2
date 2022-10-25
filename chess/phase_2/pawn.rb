@@ -4,7 +4,7 @@ class Pawn < Piece
 
   def initialize(color, board, pos)
       super
-      @symbol = :pawn
+      @symbol = :p
 
   end
 

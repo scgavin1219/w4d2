@@ -1,15 +1,8 @@
-require_relative 'Rook'
-require_relative 'Bishop'
-require_relative 'Pawn'
-require_relative 'Knight'
-require_relative 'King'
-require_relative 'Queen'
-require_relative 'NullPiece'
-require_relative 'Board'
+
 
 class Piece
 
-  attr_reader :color, :board, :pos
+  attr_accessor :color, :board, :pos, :symbol
 
   def initialize(color,board, pos)
     @color = color
