@@ -1,15 +1,15 @@
 require_relative "piece"
-require_relative "slideable"
+require_relative "stepable"
 
-class Queen < Piece
+class King < Piece
 
   def initialize(color, board, pos)
       super
-      @symbol = :queen
+      @symbol = :king
 
   end
 
-  include Slideable
+  include Stepable
 
   private
 

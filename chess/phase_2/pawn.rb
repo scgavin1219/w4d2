@@ -1,20 +1,19 @@
 require_relative "piece"
-require_relative "slideable"
 
-class Queen < Piece
+class Pawn < Piece
 
   def initialize(color, board, pos)
       super
-      @symbol = :queen
+      @symbol = :pawn
 
   end
 
-  include Slideable
+
 
   private
 
   def move_dirs
       #add diagonal
-     moves = [[0,1], [1,0], [-1,0], [0,-1]]
+     moves = [[1,0],[2,0]]
   end
 end

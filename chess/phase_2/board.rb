@@ -1,19 +1,20 @@
-require_relative "piece"
+require_relative "Piece.rb"
 
 class Board
     def initialize
         @board = Array.new(8) { Array.new(8, nil) }
         #rook
-        @board[0][0] = Piece.new(:rook)
-        @board[0][7] = Piece.new(:rook)
-        @board[7][0] = Piece.new(:rook)
-        @board[7][7] = Piece.new(:rook)
-        @board[0][2] = Piece.new(:bishop)
-        @board[0][5] = Piece.new(:bishop)
-        @board[7][2] = Piece.new(:bishop)
-        @board[7][5] = Piece.new(:bishop)
-        @board[0][3] = Piece.new(:queen)
-        @board[7][4] = Piece.new(:queen)
+        #color, board, position
+        @board[0][0] = Rook.new(:black, self, [0,0])
+        @board[0][7] = Rook.new(:black, self, [0,7])
+        @board[7][0] = Rook.new(:white, self, [7,0])
+        @board[7][7] = Rook.new(:white, self, [7,7])
+        @board[0][2] = Bishop.new(:black, self [0,2])
+        @board[0][5] = Bishop.new(:black, self [0,5])
+        @board[7][2] = Bishop.new(:white, self [7,2])
+        @board[7][5] = Bishop.new(:white, self [7,5])
+        @board[0][3] = Queen.new(:black, self, [0,3])
+        @board[7][4] = Queen.new(:white, self, [7,4])
     end
 
     def[](pos)
