@@ -2,7 +2,7 @@ require_relative "piece"
 require_relative "../modules/stepable"
 
 class Knight < Piece
-
+  include Stepable
   def initialize(color, board, pos)
       super
       @symbol = :N
@@ -14,7 +14,6 @@ class Knight < Piece
   private
 
   def move_dirs
-      #add diagonal
-     moves = [[0,1], [1,0], [-1,0], [0,-1]]
+     moves = [[2, 1], [2, -1], [1, 2], [1,-2], [-2, 1], [-2, -1], [-1, 2], [-1, -2]]
   end
 end

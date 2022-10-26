@@ -25,19 +25,19 @@ class Board
         @board[7][2] = Bishop.new(:white, self, [7,2])
         @board[7][5] = Bishop.new(:white, self, [7,5])
 
-        # #KNIGHTS
-        # @board[0][6] = Knight.new(:black, self, [0,6])
-        # @board[0][1] = Knight.new(:black, self, [0,1])
-        # @board[7][6] = Knight.new(:white, self, [7,6])
-        # @board[7][1] = Knight.new(:white, self, [7,1])
+         #KNIGHTS
+         @board[0][6] = Knight.new(:black, self, [0,6])
+         @board[0][1] = Knight.new(:black, self, [0,1])
+         @board[7][6] = Knight.new(:white, self, [7,6])
+         @board[7][1] = Knight.new(:white, self, [7,1])
 
         #QUEENS
         @board[0][3] = Queen.new(:black, self, [0,3])
         @board[7][4] = Queen.new(:white, self, [7,4])
 
-        # #KINGS
-        # @board[0][4] = King.new(:black, self, [0,4])
-        # @board[7][3] = King.new(:white, self, [7,3])
+         #KINGS
+         @board[0][4] = King.new(:black, self, [0,4])
+         @board[7][3] = King.new(:white, self, [7,3])
 
 
 
