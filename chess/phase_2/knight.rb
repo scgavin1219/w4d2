@@ -1,7 +1,7 @@
 require_relative "piece"
 require_relative "stepable"
 
-class King < Piece
+class Knight < Piece
 
   def initialize(color, board, pos)
       super
@@ -9,7 +9,7 @@ class King < Piece
 
   end
 
- 
+
 
   private
 

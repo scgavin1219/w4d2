@@ -3,18 +3,54 @@ require_relative 'chess'
 class Board
     def initialize
         @board = Array.new(8) { Array.new(8, nil) }
-        #rook
-        #color, board, position
+        populate
+
+    end
+
+    def populate
+        #ROOKS
         @board[0][0] = Rook.new(:black, self, [0,0])
         @board[0][7] = Rook.new(:black, self, [0,7])
         @board[7][0] = Rook.new(:white, self, [7,0])
         @board[7][7] = Rook.new(:white, self, [7,7])
+
+        #BISHOPS
         @board[0][2] = Bishop.new(:black, self, [0,2])
         @board[0][5] = Bishop.new(:black, self, [0,5])
         @board[7][2] = Bishop.new(:white, self, [7,2])
         @board[7][5] = Bishop.new(:white, self, [7,5])
+
+        #KNIGHTS
+        @board[0][6] = Knight.new(:black, self, [0,6])
+        @board[0][1] = Knight.new(:black, self, [0,1])
+        @board[7][6] = Knight.new(:white, self, [7,6])
+        @board[7][1] = Knight.new(:white, self, [7,1])
+
+        #QUEENS
         @board[0][3] = Queen.new(:black, self, [0,3])
         @board[7][4] = Queen.new(:white, self, [7,4])
+
+        #KINGS
+        @board[0][4] = King.new(:black, self, [0,4])
+        @board[7][3] = King.new(:white, self, [7,3])
+
+        #MAKING NULL PIECES, AND PLAYING CODE GOLF
+        32.times do |idx|
+            row, col = ((idx / 8) + 2), (idx % 8)
+            @board[row][col] = NullPiece.new
+        end
+
+        #PAWNS
+
+        8.times do |idx|
+            @board[1][idx] = Pawn.new(:black, self, [1,idx])
+        end
+
+        8.times do |idx|
+            @board[6][idx] = Pawn.new(:white, self, [6,idx])
+        end
+
+
     end
 
     def[](pos)
