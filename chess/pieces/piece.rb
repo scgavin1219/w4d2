@@ -10,5 +10,12 @@ class Piece
     @pos = pos
   end
 
+  def opposite_color
+    if self.color == :white
+      :black
+    else
+      :white
+    end
+  end
 
 end

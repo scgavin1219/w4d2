@@ -21,7 +21,7 @@ class Pawn < Piece
     steps = forward_steps
     steps.each do |ele|
       dx, dy = ele
-      dy *= -1 if self.color == :white
+      dx *= -1 if self.color == :white
       new_pos = [x + dx, y + dy]
       if valid_position?(new_pos) && board[new_pos].color.nil?
         legal_moves << new_pos
@@ -29,6 +29,15 @@ class Pawn < Piece
         break
       else
         break
+      end
+    end
+
+    side_attacks.each do |ele|
+      dx, dy = ele
+      dx *= -1 if self.color == :white
+      new_pos = [x + dx, y + dy]
+      if valid_position?(new_pos) && !board[new_pos].color.nil? && board[new_pos].opposite_color
+        legal_moves << new_pos
       end
     end
 

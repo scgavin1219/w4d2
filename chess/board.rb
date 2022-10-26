@@ -42,7 +42,6 @@ class Board
 
 
         #PAWNS
-
         8.times do |idx|
             @board[1][idx] = Pawn.new(:black, self, [1,idx])
         end
