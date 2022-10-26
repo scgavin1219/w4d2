@@ -4,10 +4,11 @@ require_relative "../modules/slideable"
 
 class Rook < Piece
 
+    include Slideable
+
     def initialize(color, board, pos)
         super
         @symbol = :R
-
     end
 
 
@@ -15,7 +16,6 @@ class Rook < Piece
     private
 
     def move_dirs
-        #will really want these horizatonal moves to go into slideable
-       moves = [[0,1], [1,0], [-1,0], [0,-1]]
+       horizontal_dirs
     end
 end

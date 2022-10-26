@@ -3,6 +3,11 @@ require_relative 'chess'
 class Board
     def initialize
         @board = Array.new(8) { Array.new(8, nil) }
+         #MAKING NULL PIECES, AND PLAYING CODE GOLF
+        64.times do |idx|
+            row, col = (idx / 8), (idx % 8)
+            @board[row][col] = NullPiece.new
+        end
         populate
 
     end
@@ -34,21 +39,17 @@ class Board
         @board[0][4] = King.new(:black, self, [0,4])
         @board[7][3] = King.new(:white, self, [7,3])
 
-        #MAKING NULL PIECES, AND PLAYING CODE GOLF
-        32.times do |idx|
-            row, col = ((idx / 8) + 2), (idx % 8)
-            @board[row][col] = NullPiece.new
-        end
+
 
         #PAWNS
 
-        8.times do |idx|
-            @board[1][idx] = Pawn.new(:black, self, [1,idx])
-        end
+        # 8.times do |idx|
+        #     @board[1][idx] = Pawn.new(:black, self, [1,idx])
+        # end
 
-        8.times do |idx|
-            @board[6][idx] = Pawn.new(:white, self, [6,idx])
-        end
+        # 8.times do |idx|
+        #     @board[6][idx] = Pawn.new(:white, self, [6,idx])
+        # end
 
 
     end
