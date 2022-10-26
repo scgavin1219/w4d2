@@ -41,15 +41,15 @@ class Board
 
 
 
-        #PAWNS
+        PAWNS
 
-        # 8.times do |idx|
-        #     @board[1][idx] = Pawn.new(:black, self, [1,idx])
-        # end
+        8.times do |idx|
+            @board[1][idx] = Pawn.new(:black, self, [1,idx])
+        end
 
-        # 8.times do |idx|
-        #     @board[6][idx] = Pawn.new(:white, self, [6,idx])
-        # end
+        8.times do |idx|
+            @board[6][idx] = Pawn.new(:white, self, [6,idx])
+        end
 
 
     end

@@ -14,9 +14,9 @@ module Slideable
     x <= 7 && x >= 0 && y <= 7 && y >= 0
   end
 
-  def grow_unblocked_moves_in_dir(dx,dy)
+  def grow_unblocked_moves_in_dir(array)
     unblocked_moves = []
-
+    dx, dy = array
     x, y = self.pos
     x += dx
     y += dy
@@ -35,7 +35,9 @@ module Slideable
   end
 
   def moves
-
+    move_dirs.inject([]) do |acc, el|
+      acc.concat(grow_unblocked_moves_in_dir(el))
+    end
   end
 
 end
