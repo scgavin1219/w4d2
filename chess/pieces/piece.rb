@@ -1,4 +1,4 @@
-
+require 'colorize'
 
 class Piece
 
@@ -16,6 +16,10 @@ class Piece
     else
       :white
     end
+  end
+
+  def to_s
+    symbol.to_s.colorize(color)
   end
 
 end
