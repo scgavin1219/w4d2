@@ -11,15 +11,15 @@ class Display
     @cursor = Cursor.new([0,0], board)
   end
 
-  # def render
-  #   @cursor.cursor_pos.colorize( :background => :red)
-  #   #print on a single line the columns
-  #   puts "  " + (0...8).to_a.join(" ")
-  #   #iterate through the rows
-  #   (0...8).each do |row|
-  #     puts "#{row} " + (0...8).to_a.map {|col| board[[row,col]].to_s}.join(" ")
-  #   end
-  # end
+def render
+   @cursor.cursor_pos.colorize( :background => :red)
+   #print on a single line the columns
+   puts "  " + (0...8).to_a.join(" ")
+   #iterate through the rows
+   (0...8).each do |row|
+     puts "#{row} " + (0...8).to_a.map {|col| board[[row,col]].to_s}.join(" ")
+   end
+ end
 end
 
 

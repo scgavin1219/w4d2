@@ -1,4 +1,5 @@
 require_relative 'chess'
+require 'colorize'
 
 
 class Board
@@ -54,15 +55,28 @@ class Board
 
     end
 
-    def render
-        # @cursor.cursor_pos.colorize( :background => :red)
-        #print on a single line the columns
-        puts "  " + (0...8).to_a.join(" ")
-        #iterate through the rows
-        (0...8).each do |row|
-          puts "#{row} " + (0...8).to_a.map {|col| @board[[row,col]].to_s}.join(" ")
-        end
-    end
+    # def board_format
+    #     grid = board.map.with_index do |row, i|
+    #         row.map.with_index do |ele, j|
+    #             if i.even? && j.odd?
+    #                 @board[i][j].to_s.colorize ( :background => :red )
+    #             else
+    #                 @board[i][j].to_s.colorize ( :background => :blue)
+    #             end
+    #         end
+    #     end
+    # end
+
+    # def render
+    #     self.board_format
+    #     # @cursor.cursor_pos.colorize( :background => :red)
+    #     #print on a single line the columns
+    #     puts "  " + (0...8).to_a.join(" ")
+    #     #iterate through the rows
+    #     (0...8).each do |row|
+    #       puts "#{row} " + (0...8).to_a.map {|col| @board[[row,col]].to_s}.join(" ")
+    #     end
+    # end
 
     def[](pos)
         x, y = pos
